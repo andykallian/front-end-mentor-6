@@ -3,6 +3,7 @@ numberInput = document.querySelector("#card-number")
 monthInput = document.querySelector("#month")
 yearInput = document.querySelector("#year")
 cvcInput = document.querySelector("#cvc")
+button = document.querySelector(".btn-submit")
 
 nameP = document.querySelector("#nameP")
 numberP = document.querySelector("#numberP")
@@ -18,24 +19,30 @@ nameImput.addEventListener("input", ()=>{
 })
 
 numberInput.addEventListener("input", ()=>{
-  let number = numberInput.value;
-  numberP.textContent = number
+  // numberP.style.fontSize = "3rem"
+  numberP.textContent = `${numberInput.value.substring(0, 4)} ${numberInput.value.substring(4, 8)} ${numberInput.value.substring(8, 12)} ${numberInput.value.substring(12, 16)}`;
 })
 
 monthInput.addEventListener("input", ()=>{
-  let month = monthInput.value;
-  monthP.textContent = month
+  monthP.textContent = `${monthInput.value.substring(0, 2)}`;
 })
 
 yearInput.addEventListener("input", ()=>{
-  let year = yearInput.value;
-  yearP.textContent = year
+  yearP.textContent = `${yearInput.value.substring(0, 2)}`;
 })
 
 cvcInput.addEventListener("input", ()=>{
-  let cvc = cvcInput.value;
-  cvcP.textContent = cvc
+  cvcP.textContent = `${cvcInput.value.substring(0, 3)}`
 })
+
+
+
+
+
+button.addEventListener("click", (e)=>{
+  e.preventDefault()
+})
+
 
 
 
