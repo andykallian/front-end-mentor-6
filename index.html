@@ -18,20 +18,19 @@
 
       <div class="cards">
         <div class="card-back">
-          <p>000</p>
+          <p id="cvcP">000</p>
         </div>
         <div class="card-front">
           <div class="elements">
             <div class="logo">
-              <p>a</p>
             </div>
             <div class="data">
               <div class="card-number">
-                <p>0000 0000 0000 0000</p>
+                <p id="numberP">0000 0000 0000 0000</p>
               </div>
               <div class="name-date">
-                <p class="name">JANE APPLESEED</p>
-                <p class="date">00/00</p>
+                <p class="name" id="nameP">JANE APPLESEED</p>
+                <p class="date"><p id="monthP">00</p><p id="yearP">00</p></p>
               </div>
             </div>
           </div>
@@ -45,13 +44,13 @@
       <form class='cardForm'>
         <label class='labelname'>
           Cardholder Name
-          <input type="text" placeholder="e.g. Jane Appleseed" name="name" class='card-input' />
+          <input type="text" placeholder="e.g. Jane Appleseed" id="name" name="name" class='card-input' />
         </label>
         <p class='info info--hidden' aria-live="polite"></p>
   
         <label class='labelnumber'>
           Card Number
-          <input type="text" placeholder="e.g. 1234 5678 9123 0000" name="number" class='card-input' minLength={19} />
+          <input type="text" placeholder="e.g. 1234 5678 9123 0000" name="number" class='card-input' id="card-number" minLength={19} />
         </label>
         <p class='info info--hidden' aria-live="polite"></p>
   
@@ -59,15 +58,15 @@
           <label class='labelmm labelyy'>
             Exp. Date (MM/YY)
             <div>
-              <input type="text" placeholder='MM' name="mm" class='card-input' />
-              <input type="text" placeholder='YY' name="yy" class='card-input' />
+              <input type="text" placeholder='MM' name="mm" class='card-input' id="month" />
+              <input type="text" placeholder='YY' name="yy" class='card-input' id="year" />
             </div>
           </label>
           <p class='info info--hidden' aria-live="polite"></p>
   
           <label class='labelcvc'>
             CVC
-            <input type="text" placeholder='e.g. 123' name="cvc" class='card-input' />
+            <input type="text" placeholder='e.g. 123' name="cvc" class='card-input' id="cvc" />
           </label>
           <p class='info info--hidden' aria-live="polite"></p>
         </div>
@@ -77,5 +76,7 @@
 
     </div>
   </main>
+
+  <script src="index.js"></script>
 </body>
 </html>
