@@ -25,6 +25,8 @@ nameInput.addEventListener("input", ()=>{
     nameP.textContent = 'YOUR NAME HERE'
   }else{
     nameP.textContent = nameInput.value.toUpperCase()
+    nameInput.style.border = "2px solid var(--dark-grayish-violet)"
+    
   }
 })
 
@@ -35,6 +37,7 @@ numberInput.addEventListener("input", ()=>{
     numberP.textContent = `${numberInput.value.substring(0, 4)} ${numberInput.value.substring(4, 8)} ${numberInput.value.substring(8, 12)} ${numberInput.value.substring(12, 16)}`;
   }else{
     numberP.textContent = '0000 0000 0000 0000'
+    numberInput.style.border = "2px solid var(--dark-grayish-violet)"
   }
 })
 
@@ -45,6 +48,7 @@ monthInput.addEventListener("input", ()=>{
     monthP.textContent = `${monthInput.value.substring(0, 2)}`;
   }else{
     monthP.textContent = '00'
+    monthInput.style.border = "2px solid var(--dark-grayish-violet)"
   }
 })
 
@@ -55,6 +59,7 @@ yearInput.addEventListener("input", ()=>{
     yearP.textContent = `${yearInput.value.substring(0, 2)}`;
   }else{
     yearP.textContent = '00'
+    yearInput.style.border = "2px solid var(--dark-grayish-violet)"
   }
 })
 
@@ -65,6 +70,7 @@ cvcInput.addEventListener("input", ()=>{
     cvcP.textContent = `${cvcInput.value.substring(0, 3)}`
   }else{
     cvcP.textContent = '000'
+    cvcInput.style.border = "2px solid var(--dark-grayish-violet)"
   }
 })
 
@@ -80,8 +86,8 @@ button.addEventListener("click", function(event){
       paragraphs[i].style.display = "block"
       input.style.border = "2px solid var(--Red)"
     }else{
-        paragraphs[i].style.display = "none"
-        input.style.border = "2px solid var(--dark-grayish-violet)"
+      paragraphs[i].style.display = "none"
+      input.style.border = "2px solid var(--dark-grayish-violet)"
     }
   });
 });
