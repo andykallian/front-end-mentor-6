@@ -1,4 +1,4 @@
-nameImput = document.querySelector("#name")
+nameInput = document.querySelector("#name")
 numberInput = document.querySelector("#card-number")
 monthInput = document.querySelector("#month")
 yearInput = document.querySelector("#year")
@@ -12,59 +12,82 @@ monthP = document.querySelector("#monthP")
 yearP = document.querySelector("#yearP")
 cvcP = document.querySelector("#cvcP")
 
+button = document.querySelector(".btn-submit")
 
-nameImput.addEventListener("input", ()=>{
-  let name = nameImput.value
-  nameP.textContent = name.toUpperCase()
+// function numberOnly(numberInput){
+
+//   numberInput.value = numberInput.value.replace(/[^0-9]/gi, "");
+// }
+
+
+nameInput.addEventListener("input", ()=>{
+  if(nameInput.value === ""){
+    nameP.textContent = 'YOUR NAME HERE'
+  }else{
+    nameP.textContent = nameInput.value.toUpperCase()
+  }
 })
 
 numberInput.addEventListener("input", ()=>{
-  // numberP.style.fontSize = "3rem"
-  numberP.textContent = `${numberInput.value.substring(0, 4)} ${numberInput.value.substring(4, 8)} ${numberInput.value.substring(8, 12)} ${numberInput.value.substring(12, 16)}`;
+  numberInput.value = numberInput.value.replace(/[^0-9]/gi, "");
+
+  if(numberInput.value !== ""){
+    numberP.textContent = `${numberInput.value.substring(0, 4)} ${numberInput.value.substring(4, 8)} ${numberInput.value.substring(8, 12)} ${numberInput.value.substring(12, 16)}`;
+  }else{
+    numberP.textContent = '0000 0000 0000 0000'
+  }
 })
 
 monthInput.addEventListener("input", ()=>{
-  monthP.textContent = `${monthInput.value.substring(0, 2)}`;
+  monthInput.value = monthInput.value.replace(/[^0-9]/gi, "");
+
+  if(monthInput.value !== ""){
+    monthP.textContent = `${monthInput.value.substring(0, 2)}`;
+  }else{
+    monthP.textContent = '00'
+  }
 })
 
 yearInput.addEventListener("input", ()=>{
-  yearP.textContent = `${yearInput.value.substring(0, 2)}`;
+  yearInput.value = yearInput.value.replace(/[^0-9]/gi, "");
+
+  if(yearInput.value !== ""){
+    yearP.textContent = `${yearInput.value.substring(0, 2)}`;
+  }else{
+    yearP.textContent = '00'
+  }
 })
 
 cvcInput.addEventListener("input", ()=>{
-  cvcP.textContent = `${cvcInput.value.substring(0, 3)}`
+  cvcInput.value = cvcInput.value.replace(/[^0-9]/gi, "");
+
+  if(cvcInput.value !== ""){
+    cvcP.textContent = `${cvcInput.value.substring(0, 3)}`
+  }else{
+    cvcP.textContent = '000'
+  }
 })
 
 
 
-
-
-button.addEventListener("click", (e)=>{
-  e.preventDefault()
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-button = document.querySelector(".btn-submit")
 
 button.addEventListener("click", function(event){
   event.preventDefault()
-  // console.log(nameP.innerText)
-  // console.log(nameImput.value)
-  // console.log(numberImput.value)
-  // console.log(monthImput.value)
-  // console.log(yearImput.value)
-  // console.log(cvcImput.value)
+  
+  inputs = document.querySelectorAll('input')
+  paragraphs = document.querySelectorAll('label p')
+
+
+  for(let i = 0; i < inputs.length; i++){
+    if(inputs[i].value === ""){
+      paragraphs[i].style.display = "block"
+      inputs[i].style.border = "2px solid var(--Red)"
+    }else{
+      paragraphs[i].style.display = "none"
+      inputs[i].style.border = "2px solid var(--dark-grayish-violet)"
+    }
+  }
+
 });
 
 

@@ -47,17 +47,18 @@ body, html{
 }
 
     .container{ 
-
         background-image: url(images/bg-main-mobile.png);
         background-repeat: no-repeat;
-        background-size: cover;
-    
-        height: 30rem;
-        padding-block: 5.5rem;
+        background-size: contain;
+
+        padding-top: 4rem;
+        padding-bottom: 1rem;
 
         display: flex;
         flex-direction: column;
-        gap: 15rem;
+        gap: 14rem;
+
+        box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 15%);
     }
 
 
@@ -153,11 +154,12 @@ body, html{
                 flex-direction: column;
                 margin: auto;
                 padding: 1rem;
+                gap: 1rem;
             }
             
             .cardForm label {
-                margin-bottom: 16px;
-                gap: 14px;
+                margin-bottom: .2rem;
+                /* gap: 14px; */
                 text-transform: uppercase;
                 display: flex;
                 flex-direction: column;
@@ -168,17 +170,18 @@ body, html{
             .cardForm input{
                 color: var(--very-dark-violet);
                 padding: 10px;
+                border: 2px solid var(--dark-grayish-violet);
             }
 
-            .cardForm input:hover {
+            /* .cardForm input:hover {
                 border: 1px solid hsl(249, 99%, 64%);
-            }
+            } */
             
             .labelmm,.labelcvc {
                 width: 50%;
             }
             
-            .labelmm div {
+            .labelmm .label-container {
                 display: flex;
                 gap: 10px;
             }
@@ -187,10 +190,24 @@ body, html{
                 width: 100%;
             }
 
-            span{
-                /* position: absolute; */
+            span p{
                 color: var(--Red);
-                font-size: 1rem;
+                font-size: 1.3rem;
+                font-weight: bold;
+                margin-bottom: .5rem;
+                text-transform: none;
+            }
+
+            .name-p,
+            .number-p,
+            .month-p,
+            .year-p,
+            .cvc-p{
+                display: none;
+            }
+
+            .date-container{
+                flex-direction: column;
             }
             
             .cvc-mmyy {
@@ -239,5 +256,6 @@ body, html{
     .container{
         width: 45rem;
         margin: auto;
+        border: 2px solid var(--dark-grayish-violet);
     }
 }                            

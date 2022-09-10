@@ -29,7 +29,7 @@
                 <p id="numberP">0000 0000 0000 0000</p>
               </div>
               <div class="name-date">
-                <p class="name" id="nameP">JANE APPLESEED</p>
+                <p class="name" id="nameP">YOUR NAME HERE</p>
                 <div class="date">
                   <p id="monthP">00</p>
                   /
@@ -48,34 +48,38 @@
       <form class='cardForm'>
         <label class='labelname'>
           Cardholder Name
-          <input type="text" placeholder="e.g. Jane Appleseed" id="name" name="name" class='card-input' maxlength="20" />
-          <span class='name-span'>aaa</span>
+          <input type="text" placeholder="e.g. Jane Appleseed" id="name" name="name" class='card-input' maxlength="20"/>
+          <span><p class='name-p'>Please fill your name</p></span>
         </label>
   
         <label class='labelnumber'>
           Card Number
-          <input type="text" placeholder="e.g. 1234 5678 9123 0000" name="number" class='card-input' id="card-number" minLength="16" maxLength="16" />
-          <span class='number-span'></span>
+          <input type="text" placeholder="e.g. 1234 5678 9123 0000" name="number" class='card-input' id="card-number" maxlength="16"/>
+          <span><p class='number-p'>Card number required to fill</p></span>
         </label>
   
         <div class='cvc-mmyy'>
           <label class='labelmm labelyy'>
             Exp. Date (MM/YY)
-            <div>
-              <input type="text" placeholder='MM' name="mm" class='card-input' id="month" maxLength="2" />
-              <span class='month-span'></span>
-              <input type="text" placeholder='YY' name="yy" class='card-input' id="year" maxLength="2" />
-              <span class='year-span'></span>
+            <div class="label-container">
+              <div class="date-container">
+                <input type="text" placeholder='MM' name="mm" class='card-input' id="month" maxLength="2" />
+                <span><p class='month-p'>Required to fill</p></span>
+              </div>
+              <div class="date-container">
+                <label for="">
+                  <input type="text" placeholder='YY' name="yy" class='card-input' id="year" maxLength="2" />
+                  <span><p class='year-p'>Required to fill</p></span>
+                </label>
+              </div>
             </div>
           </label>
-          <p class='info info--hidden' aria-live="polite"></p>
   
           <label class='labelcvc'>
             CVC
             <input type="text" placeholder='e.g. 123' name="cvc" class='card-input' id="cvc" maxLength="3"/>
-            <span class='cvc-span'></span>
+            <span><p class='cvc-p'>CVC required to fill</p></span>
           </label>
-          <p class='info info--hidden' aria-live="polite"></p>
         </div>
   
         <button type='submit' class='btn-submit btn-primary'>Confirm</button>
