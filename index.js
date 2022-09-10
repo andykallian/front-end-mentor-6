@@ -69,25 +69,21 @@ cvcInput.addEventListener("input", ()=>{
 })
 
 
-
-
 button.addEventListener("click", function(event){
   event.preventDefault()
   
   inputs = document.querySelectorAll('input')
   paragraphs = document.querySelectorAll('label p')
 
-
-  for(let i = 0; i < inputs.length; i++){
-    if(inputs[i].value === ""){
+  inputs.forEach((input, i) => {
+    if(input.value === ""){
       paragraphs[i].style.display = "block"
-      inputs[i].style.border = "2px solid var(--Red)"
+      input.style.border = "2px solid var(--Red)"
     }else{
-      paragraphs[i].style.display = "none"
-      inputs[i].style.border = "2px solid var(--dark-grayish-violet)"
+        paragraphs[i].style.display = "none"
+        input.style.border = "2px solid var(--dark-grayish-violet)"
     }
-  }
-
+  });
 });
 
 
