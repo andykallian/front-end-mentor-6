@@ -84,10 +84,15 @@ button.addEventListener("click", function(event){
     }
   });
 
-  if(nameInput.value && numberInput.value && monthInput.value && yearInput.value && cvcInput.value !== ''){
+    
+  const novoInput = inputArrays.filter(input => input.value !== '');
+
+  if(novoInput.length === 5){
     cardForm.style.display = 'none';
     thanks.style.display = 'block';
-  } 
+  }
+
+  console.log(novoInput.length)
 });
 
 
