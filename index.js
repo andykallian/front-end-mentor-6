@@ -5,6 +5,7 @@ yearInput = document.querySelector("#year")
 cvcInput = document.querySelector("#cvc")
 button = document.querySelector(".btn-submit")
 
+
 nameP = document.querySelector("#nameP")
 numberP = document.querySelector("#numberP")
 numberP = document.querySelector("#numberP")
@@ -93,9 +94,13 @@ button.addEventListener("click", function(event){
       paragraphs[i].style.display = "none"
       input.style.border = "2px solid var(--dark-grayish-violet)"
     }
+
+
+    if(nameInput.value && numberInput.value && monthInput.value && yearInput.value && cvcInput.value !== ''){
+      cardForm.innerHTML = contentCorrect
+    }
   });
 
-  cardForm.innerHTML = contentCorrect
 });
 
 
